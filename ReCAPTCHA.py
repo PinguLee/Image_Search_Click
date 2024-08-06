@@ -2,12 +2,14 @@ import pyautogui
 import cv2
 import numpy as np
 import time
+import os
 
 # 찾을 이미지 파일 경로
-target_image_path = 'test.png'
+script_dir = os.path.dirname(__file__)
+target_image_path = os.path.join(script_dir, 'sample.png')
 
 # 대기 시간 설정 (초)
-wait_time = 0.1  # 0.1초마다 이미지를 찾음
+wait_time = 0.1  # 0.3초마다 이미지를 찾음
 
 def find_and_click_image(image_path):
     # 대상 이미지 로드
@@ -31,7 +33,6 @@ def find_and_click_image(image_path):
                 target_x, target_y = target_loc[0] + target_width // 2, target_loc[1] + target_height // 2
                 pyautogui.moveTo(target_x, target_y)
                 pyautogui.click()
-                break  # 이미지를 찾고 클릭한 후에 루프를 종료합니다.
 
             time.sleep(wait_time)
 
