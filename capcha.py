@@ -7,7 +7,7 @@ import time
 target_image_path = 'test.png'
 
 # 대기 시간 설정 (초)
-wait_time = 0.5  # 0.5초마다 이미지를 찾음
+wait_time = 0.3  # 0.3초마다 이미지를 찾음
 
 def find_and_click_image(image_path):
     # 대상 이미지 로드
